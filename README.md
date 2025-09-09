@@ -33,12 +33,13 @@ git clone https://github.com/reazulislam1487/course-management-api.git
 cd course-management-api
 ```
 
-Install dependencies
+## Install dependencies
 
-npm install
+2. npm install
 
 Create .env file in the project root:
 
+```bash
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_ACCESS_SECRET=your_access_secret
@@ -46,8 +47,9 @@ JWT_REFRESH_SECRET=your_refresh_secret
 ACCESS_TOKEN_EXPIRES_IN=15m
 REFRESH_TOKEN_EXPIRES_IN=7d
 BCRYPT_SALT_ROUNDS=10
+```
 
-Run the server
+## Run the server
 
 npm start
 
@@ -55,7 +57,9 @@ API will be running at 👉 http://localhost:5000
 
 📌 API Endpoints
 🔐 Auth Routes
-Register
+
+## Register
+
 POST /api/auth/register
 
 Request
@@ -72,7 +76,8 @@ Response
 "message": "User registered successfully"
 }
 
-Login
+## Login
+
 POST /api/auth/login
 
 Request
@@ -89,7 +94,8 @@ Response
 "refreshToken": "jwt_refresh_token"
 }
 
-Refresh Token
+## Refresh Token
+
 POST /api/auth/refresh
 
 Request
@@ -104,7 +110,8 @@ Response
 "accessToken": "new_jwt_access_token"
 }
 
-Logout
+## Logout
+
 POST /api/auth/logout
 Authorization: Bearer <access_token>
 
@@ -114,7 +121,8 @@ Response
 "message": "Logged out successfully"
 }
 
-📚 Course Routes
+## 📚 Course Routes
+
 Get All Courses
 GET /api/courses
 
@@ -130,7 +138,8 @@ Response
 }
 ]
 
-Get Course by ID
+## Get Course by ID
+
 GET /api/courses/:id
 
 Create Course (Admin only)
@@ -152,7 +161,8 @@ Response
 "message": "Course created successfully"
 }
 
-Delete Course (Admin only)
+## Delete Course (Admin only)
+
 DELETE /api/courses/:id
 Authorization: Bearer <access_token>
 
@@ -162,7 +172,8 @@ Response
 "message": "Course deleted successfully"
 }
 
-🛒 Purchase Routes
+## 🛒 Purchase Routes
+
 Purchase a Course (User only)
 POST /api/purchases/:courseId
 Authorization: Bearer <access_token>
@@ -173,7 +184,8 @@ Response
 "message": "Course purchased successfully"
 }
 
-Get My Purchases
+## Get My Purchases
+
 GET /api/purchases
 Authorization: Bearer <access_token>
 
